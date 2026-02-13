@@ -8,4 +8,5 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
+| tomchaccom | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
