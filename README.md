@@ -95,6 +95,8 @@ Action이 실행될 때 본인 폴더로 자동 이동하기 위해 반드시 �
 - 레포에 현재 PR을 통한 Merge 시 리드미에 사용자별로 일주일에 몇번 PR을 넣었는지 동작하는 로직이 있습니다!
 - 그래서 다른 사람이 먼저 main에 push 한 경우 여러분이 동기화한 시점에서 달라지는 부분이 생겨서 충돌이 발생합니다!
 - 반드시 문제를 제출하기 직전에 동기화를 진행해 주세요!!!!
+
+#### sync_fork 클릭 후 discard commit 을 선택해 주세요!(문제 제출 전에 해야 합니다.. 안그러면 백준 허브 재연결 해야해요..)
 <img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/5fa6dd12-f1fb-4c49-bfd0-be905ecb43dc" />
 
 <img width="720" height="540" alt="image" src="https://github.com/user-attachments/assets/c74ddb8e-5c26-4255-a6c5-aab986de2627" />
@@ -154,6 +156,7 @@ Action이 정상 실행되었다면, 본인 백준 아이디 폴더 내부에 �
 
 ### 동기화 완료 
 <img width="900" height="270" alt="image" src="https://github.com/user-attachments/assets/42e0cef1-cfd9-4a50-a40d-94256e4cc787" />
+
 
 
 
