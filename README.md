@@ -13,7 +13,7 @@
 | alicebsy | 2 | ❌ |
 | hjxarchive | 5 | ✅ |
 | orca-svg | 16 | ✅ |
-| sungjaep11 | 1 | ❌ |
+| sungjaep11 | 2 | ❌ |
 | tomchaccom | 4 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
