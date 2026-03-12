@@ -12,6 +12,7 @@
 | Nul0luN | 13 | ✅ |
 | alicebsy | 1 | ❌ |
 | godten-cmd | 3 | ❌ |
+| haeunjeon0410 | 1 | ❌ |
 | onff02 | 8 | ✅ |
 | orca-svg | 4 | ❌ |
 | sungjaep11 | 2 | ❌ |
