@@ -10,11 +10,11 @@
 |--------|-------|--------|
 | KangYeSeo04 | 6 | ✅ |
 | LYoooJ | 6 | ✅ |
-| Nul0luN | 24 | ✅ |
+| Nul0luN | 25 | ✅ |
 | alicebsy | 7 | ✅ |
 | godten-cmd | 5 | ✅ |
 | haeunjeon0410 | 14 | ✅ |
-| onff02 | 11 | ✅ |
+| onff02 | 10 | ✅ |
 | orca-svg | 11 | ✅ |
 | sungjaep11 | 5 | ✅ |
 | tomchaccom | 10 | ✅ |
