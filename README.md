@@ -8,6 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
+| Nul0luN | 1 | ❌ |
 | haeunjeon0410 | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
