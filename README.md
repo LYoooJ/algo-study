@@ -8,7 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| haeunjeon0410 | 1 | ❌ |
+| haeunjeon0410 | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
