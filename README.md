@@ -8,12 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| LYoooJ | 1 | ❌ |
-| Nul0luN | 10 | ✅ |
-| alicebsy | 5 | ✅ |
-| haeunjeon0410 | 19 | ✅ |
-| onff02 | 13 | ✅ |
-| sungjaep11 | 7 | ✅ |
+| - | 0 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
