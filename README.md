@@ -14,10 +14,10 @@
 | alicebsy | 5 | ✅ |
 | godten-cmd | 5 | ✅ |
 | haeunjeon0410 | 28 | ✅ |
-| onff02 | 15 | ✅ |
+| onff02 | 14 | ✅ |
 | orca-svg | 5 | ✅ |
 | sungjaep11 | 7 | ✅ |
-| tomchaccom | 4 | ❌ |
+| tomchaccom | 5 | ✅ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
