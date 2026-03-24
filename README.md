@@ -8,7 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| LYoooJ | 4 | ❌ |
+| LYoooJ | 5 | ✅ |
 | Nul0luN | 3 | ❌ |
 | alicebsy | 1 | ❌ |
 | haeunjeon0410 | 1 | ❌ |
