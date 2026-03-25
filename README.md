@@ -14,7 +14,7 @@
 | godten-cmd | 4 | ❌ |
 | haeunjeon0410 | 4 | ❌ |
 | sungjaep11 | 2 | ❌ |
-| tomchaccom | 5 | ✅ |
+| tomchaccom | 6 | ✅ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
