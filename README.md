@@ -9,7 +9,7 @@
 | Member | Count | Status |
 |--------|-------|--------|
 | LYoooJ | 7 | ✅ |
-| Nul0luN | 9 | ✅ |
+| Nul0luN | 10 | ✅ |
 | alicebsy | 3 | ❌ |
 | godten-cmd | 4 | ❌ |
 | haeunjeon0410 | 4 | ❌ |
