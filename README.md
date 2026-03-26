@@ -13,7 +13,7 @@
 | alicebsy | 3 | ❌ |
 | godten-cmd | 4 | ❌ |
 | haeunjeon0410 | 7 | ✅ |
-| onff02 | 1 | ❌ |
+| onff02 | 2 | ❌ |
 | orca-svg | 4 | ❌ |
 | sungjaep11 | 3 | ❌ |
 | tomchaccom | 14 | ✅ |
