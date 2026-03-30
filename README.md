@@ -10,7 +10,7 @@
 |--------|-------|--------|
 | LYoooJ | 1 | ❌ |
 | Nul0luN | 2 | ❌ |
-| sungjaep11 | 1 | ❌ |
+| sungjaep11 | 2 | ❌ |
 | tomchaccom | 1 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
