@@ -12,7 +12,7 @@
 | Nul0luN | 14 | ✅ |
 | alicebsy | 3 | ❌ |
 | haeunjeon0410 | 10 | ✅ |
-| onff02 | 17 | ✅ |
+| onff02 | 18 | ✅ |
 | orca-svg | 4 | ❌ |
 | sungjaep11 | 5 | ✅ |
 | tomchaccom | 5 | ✅ |
