@@ -8,7 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| godten-cmd | 1 | ❌ |
+| godten-cmd | 2 | ❌ |
 | onff02 | 3 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
