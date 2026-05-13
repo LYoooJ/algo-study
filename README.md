@@ -11,7 +11,7 @@
 | LYoooJ | 5 | ✅ |
 | Nul0luN | 6 | ✅ |
 | haeunjeon0410 | 1 | ❌ |
-| sungjaep11 | 3 | ❌ |
+| sungjaep11 | 4 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
