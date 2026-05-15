@@ -13,7 +13,7 @@ on:
 
 permissions:
   contents: write
-  pull-requests: read # 안전한 PR 데이터 조회를 위해 권한 추가
+  pull-requests: read # PR 조회를 위한 권한
 
 concurrency:
   group: weekly-dashboard
@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   dashboard:
-    # github-actions bot이 스스로 만든 커밋으로 인한 무한 루프 재실행 방지
+    # github-actions bot이 만든 커밋에 의한 무한 루프 방지
     if: github.actor != 'github-actions[bot]'
 
     runs-on: ubuntu-24.04
@@ -34,7 +34,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          ref: main # 트리거된 컨텍스트의 main 브랜치 소스코드를 명시적으로 지정
+          ref: main
           fetch-depth: 0
           persist-credentials: true
 
@@ -57,70 +57,37 @@ jobs:
         with:
           script: |
             const fs = require("fs");
-
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
-            // KST 기준 이번 주 월요일 00:00 계산
             const now = new Date();
-            const kstNow = new Date(
-              now.toLocaleString("en-US", {
-                timeZone: "Asia/Seoul"
-              })
-            );
-
+            const kstNow = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
             const day = kstNow.getDay();
             const diff = day === 0 ? 6 : day - 1;
 
             kstNow.setDate(kstNow.getDate() - diff);
             kstNow.setHours(0, 0, 0, 0);
-
             const mondayUTC = new Date(kstNow.toISOString());
 
-            console.log("KST Monday:", kstNow.toISOString());
-            console.log("UTC Monday:", mondayUTC.toISOString());
-
-            // Closed PR 전체 조회
-            const pulls = await github.paginate(
-              github.rest.pulls.list,
-              {
-                owner,
-                repo,
-                state: "closed",
-                per_page: 100
-              }
-            );
-
-            console.log("Total closed PRs:", pulls.length);
-
-            // 이번 주 merge된 PR만 필터링
-            const weekly = pulls.filter(pr => {
-              return (
-                pr.merged_at &&
-                new Date(pr.merged_at) >= mondayUTC
-              );
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner,
+              repo,
+              state: "closed",
+              per_page: 100
             });
 
-            console.log("Merged PR count this week:", weekly.length);
+            const weekly = pulls.filter(pr => pr.merged_at && new Date(pr.merged_at) >= mondayUTC);
 
-            // 작성자별 집계
             const counts = {};
             weekly.forEach(pr => {
               const author = pr.user.login;
-              if (!counts[author]) {
-                counts[author] = 0;
-              }
-              counts[author]++;
+              counts[author] = (counts[author] || 0) + 1;
             });
 
-            // Markdown Table 생성
-            let table = "";
-            table += `📅 기준 주간 시작: ${kstNow.toISOString().slice(0, 10)} (월요일 00:00 KST)\n\n`;
-            table += "| Member | Count | Status |\n";
-            table += "|--------|-------|--------|\n";
+            let table = `📅 기준 주간 시작: ${kstNow.toISOString().slice(0, 10)} (월요일 00:00 KST)\n\n`;
+            table += "| Member | Count | Status |\n|--------|-------|--------|\n";
 
             const authors = Object.keys(counts).sort();
-
             if (authors.length === 0) {
               table += "| - | 0 | ❌ |\n";
             } else {
@@ -131,11 +98,10 @@ jobs:
               });
             }
 
-            console.log(table);
             fs.writeFileSync("dashboard_table.txt", table);
 
       # =========================================
-      # 3️⃣ README 업데이트 (split 에러 방지 처리 완료)
+      # 3️⃣ README 업데이트 (포매터/IDE 자동삭제 방지 적용)
       # =========================================
       - name: Inject Dashboard into README
         run: |
@@ -147,30 +113,25 @@ jobs:
           table = Path("dashboard_table.txt")
 
           if not readme.exists() or not table.exists():
-              print("Required files (README.md or dashboard_table.txt) missing.", file=sys.stderr)
+              print("Required files missing.", file=sys.stderr)
               sys.exit(1)
 
           content = readme.read_text(encoding="utf-8")
           dashboard = table.read_text(encoding="utf-8").strip()
 
-          start_marker = ""
-          end_marker = ""
-
-          # 마커 존재 여부 및 빈 값 검증
-          if not start_marker or not end_marker:
-              print("Error: Markers cannot be empty strings.", file=sys.stderr)
-              sys.exit(1)
+          # HTML 주석 형태를 유지하면서 에디터 자동 삭제를 피하기 위한 문자열 조립
+          start_marker = "<" + "!-- WEEKLY_DASHBOARD_START --" + ">"
+          end_marker = "<" + "!-- WEEKLY_DASHBOARD_END --" + ">"
 
           if start_marker not in content or end_marker not in content:
-              print("Error: Cannot find target markers in README.md", file=sys.stderr)
+              print(f"Error: Cannot find markers in README.md\nTarget: {start_marker}", file=sys.stderr)
               sys.exit(1)
 
-          # split 과정에서 빈 문자열 에러를 방지하기 위해 변수를 명확히 전달
           try:
               before = content.split(start_marker)[0]
               after = content.split(end_marker)[1]
           except ValueError as e:
-              print(f"Python split failed: {e}", file=sys.stderr)
+              print(f"Split failed: {e}", file=sys.stderr)
               sys.exit(1)
 
           updated_content = before + start_marker + "\n" + dashboard + "\n" + end_marker + after
@@ -198,7 +159,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add README.md
-
           if git diff --staged --quiet; then
             echo "No changes detected"
             exit 0
@@ -211,10 +171,7 @@ jobs:
           do
             git push origin HEAD:main && break
             echo "Push failed. Retry $i/3"
-            if [ $i -eq 3 ]; then
-              echo "Push failed after 3 attempts"
-              exit 1
-            fi
+            if [ $i -eq 3 ]; then exit 1; fi
             sleep 5
           done
 
