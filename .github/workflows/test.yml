@@ -1,9 +1,12 @@
-name: Test Runner
+name: Test Trigger
+
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Runner is working!"
+      - run: echo "✅ Workflow triggered!"
