@@ -3,6 +3,7 @@
 ## 📊 Weekly Dashboard
 
 <!-- WEEKLY_DASHBOARD_START -->
+
 📅 기준: 2026-05-11 (월요일 00:00 KST)
 
 | Member | Count | Status |
@@ -12,7 +13,7 @@
 | alicebsy | 5 | ✅ |
 | haeunjeon0410 | 4 | ❌ |
 | sungjaep11 | 8 | ✅ |
-| tomchaccom | 5 | ✅ |
+| tomchaccom | 7 | ✅ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 # 스터디 참여 가이드

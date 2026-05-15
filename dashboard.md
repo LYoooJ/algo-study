@@ -7,4 +7,4 @@
 | alicebsy | 5 | ✅ |
 | haeunjeon0410 | 4 | ❌ |
 | sungjaep11 | 8 | ✅ |
-| tomchaccom | 5 | ✅ |
+| tomchaccom | 7 | ✅ |
