@@ -13,7 +13,7 @@
 | haeunjeon0410 | 4 | ❌ |
 | onff02 | 1 | ❌ |
 | sungjaep11 | 9 | ✅ |
-| tomchaccom | 16 | ✅ |
+| tomchaccom | 17 | ✅ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
