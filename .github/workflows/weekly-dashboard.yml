@@ -51,11 +51,11 @@ jobs:
             const now = new Date();
             const kstNow = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
             const day = kstNow.getDay();
-            const diff = day === 0 ? 0 : day;
+            const diff = day === 1 ? 0 : (day === 0 ? 1 : day - 1);
 
             kstNow.setDate(kstNow.getDate() - diff);
             kstNow.setHours(0, 0, 0, 0);
-            const sundayUTC = new Date(kstNow.toISOString());
+            const mondayUTC = new Date(kstNow.toISOString());
 
             const pulls = await github.paginate(github.rest.pulls.list, {
               owner,
@@ -64,7 +64,7 @@ jobs:
               per_page: 100
             });
 
-            const weekly = pulls.filter(pr => pr.merged_at && new Date(pr.merged_at) >= sundayUTC);
+            const weekly = pulls.filter(pr => pr.merged_at && new Date(pr.merged_at) >= mondayUTC);
 
             const counts = {};
             weekly.forEach(pr => {
@@ -72,7 +72,7 @@ jobs:
               counts[author] = (counts[author] || 0) + 1;
             });
 
-            let table = `📅 기준 주간 시작: ${kstNow.toISOString().slice(0, 10)} (일요일 00:00 KST)\n\n`;
+            let table = `📅 기준 주간 시작: ${kstNow.toISOString().slice(0, 10)} (월요일 00:00 KST)\n\n`;
             table += "| Member | Count | Status |\n|--------|-------|--------|\n";
 
             const authors = Object.keys(counts).sort();
