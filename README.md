@@ -9,7 +9,7 @@
 |--------|-------|--------|
 | onff02 | 5 | ✅ |
 | sungjaep11 | 2 | ❌ |
-| tomchaccom | 1 | ❌ |
+| tomchaccom | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
