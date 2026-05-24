@@ -7,7 +7,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| KangYeSeo04 | 1 | ❌ |
+| KangYeSeo04 | 2 | ❌ |
 | LYoooJ | 5 | ✅ |
 | alicebsy | 1 | ❌ |
 | godten-cmd | 5 | ✅ |
