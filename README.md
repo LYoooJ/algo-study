@@ -7,7 +7,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| haeunjeon0410 | 2 | ❌ |
+| haeunjeon0410 | 3 | ❌ |
 | sungjaep11 | 1 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
