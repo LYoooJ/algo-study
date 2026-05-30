@@ -10,7 +10,7 @@
 | LYoooJ | 5 | ✅ |
 | godten-cmd | 2 | ❌ |
 | haeunjeon0410 | 7 | ✅ |
-| sungjaep11 | 3 | ❌ |
+| sungjaep11 | 4 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
