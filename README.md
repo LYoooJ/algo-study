@@ -9,7 +9,7 @@
 |--------|-------|--------|
 | LYoooJ | 5 | ✅ |
 | godten-cmd | 5 | ✅ |
-| onff02 | 1 | ❌ |
+| onff02 | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
