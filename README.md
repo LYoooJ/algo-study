@@ -7,7 +7,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| onff02 | 1 | ❌ |
+| onff02 | 2 | ❌ |
 | sungjaep11 | 5 | ✅ |
 <!-- WEEKLY_DASHBOARD_END -->
 
