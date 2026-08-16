@@ -9,7 +9,7 @@
 |--------|-------|--------|
 | KangYeSeo04 | 5 | ✅ |
 | LYoooJ | 5 | ✅ |
-| alicebsy | 2 | ❌ |
+| alicebsy | 3 | ❌ |
 | haeunjeon0410 | 5 | ✅ |
 | onff02 | 5 | ✅ |
 | sungjaep11 | 5 | ✅ |
