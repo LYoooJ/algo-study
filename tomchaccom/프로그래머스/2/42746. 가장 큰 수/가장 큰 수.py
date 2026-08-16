@@ -1,15 +1,20 @@
+from functools import cmp_to_key
+
+def compare(a,b):
+    if a + b > b + a:
+        return -1
+    elif a + b < b + a:
+        return 1
+    else:
+        return 0
 
 def solution(numbers):
     answer = list(map(str, numbers))
     
-    answer.sort(key = lambda x : x * 3 , reverse = True)
+    result = sorted(answer, key = cmp_to_key(compare))
     
-    if answer[0] == "0":
+    if result[0] == "0":
         return "0"
     
-    return "".join(answer)
-    
-    # 앞자리만 비교하고 있긴함. 
-    
-
+    return "".join(result)
 
