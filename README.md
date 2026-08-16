@@ -11,6 +11,7 @@
 | LYoooJ | 5 | ✅ |
 | haeunjeon0410 | 5 | ✅ |
 | onff02 | 5 | ✅ |
+| sungjaep11 | 1 | ❌ |
 | tomchaccom | 5 | ✅ |
 <!-- WEEKLY_DASHBOARD_END -->
 
