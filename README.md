@@ -19,6 +19,36 @@
 
 ---
 
+## GitHub CLI 자동화 (권장)
+
+처음 한 번 GitHub CLI에 로그인하고 `study` 별칭을 등록합니다.
+
+```bash
+gh auth login
+gh alias set study '!f() { study_script=$(mktemp); gh api repos/algo-gongbu/algo-study/contents/scripts/study -H "Accept: application/vnd.github.raw+json" > "$study_script"; bash "$study_script" "$@"; study_status=$?; rm -f "$study_script"; return $study_status; }; f'
+```
+
+문제를 풀기 직전에 fork를 원본과 동기화합니다.
+
+```bash
+gh study start
+```
+
+BaekjoonHub 업로드와 auto-move가 끝난 다음 제출합니다.
+
+```bash
+gh study submit --note "풀이에서 사용한 핵심 아이디어"
+```
+
+`submit`은 auto-move 성공 확인, 문제 감지, 컨벤션 브랜치 생성, PR 작성,
+Merge commit, fork 재동기화를 자동으로 처리합니다. PR만 만들고 코드를 더 확인하려면
+`--no-merge`, 원격 변경 없이 확인하려면 `--dry-run`을 사용합니다.
+
+`start`는 미제출 변경을 발견하면 중단합니다. 해당 변경을 정말 버릴 때만
+`gh study start --discard`를 사용하세요.
+
+---
+
 
 
 
@@ -112,18 +142,19 @@ Action이 정상 실행되었다면, 본인 백준 아이디 폴더 내부에 �
 ### 브랜치 컨벤션
 
 ```
-/boj/{문제티어}/{문제번호}
+boj/{문제티어}/{문제번호}
 ```
 ```
-/pro/문제레벨
+pro/level{문제레벨}/{문제번호}
 > 프로그래머스 문제는 한국어로 구성되어 있어서 PR에 자세한 내용을 첨부 부탁드립니다!
 ```
 
 예시:
 
 ```
-/boj/Gold/9935
-/boj/Silver/1926
+boj/Gold/9935
+boj/Silver/1926
+pro/level1/42840
 ```
 
 <img width="360" height="270" alt="image" src="https://github.com/user-attachments/assets/ff5fd580-d0db-49d1-b757-606802f4781d" />
@@ -141,18 +172,16 @@ Action이 정상 실행되었다면, 본인 백준 아이디 폴더 내부에 �
 
 ---
 
-## 7. main으로 Squash Merge
+## 7. main으로 Merge commit
 
-코드 확인 후 **Squash and merge**를 진행합니다.
+코드 확인 후 **Create a merge commit**을 진행합니다.
 
-반드시 Squash Merge를 사용합니다.
-
-<img width="703" height="57" alt="image" src="https://github.com/user-attachments/assets/196da5ab-e6bf-446e-a136-ab4de22870f1" />
+현재 공용 레포 설정과 동일하게 Merge commit을 사용합니다.
 
 
 ---
 ## 8. fork 된 레포지터리와 메인 레포를 동기화하기
-- squash merge로 인해, 공용 스터디 레포의 커밋 히스토리와, 현재 본인의 레포간 동기화가 제대로 되어었지 않을 겁니다!
+- merge 후 공용 스터디 레포와 fork의 `main`을 다시 동일하게 맞춥니다.
 - 그래서 sync_fork 클릭 후 discard commit 을 선택해 주세요!
 
 ### discard commit 으로 동기화(동기화 진행 없이 PR을 보내면 기존 커밋 내역도 PR에 같이 들어갑니다)
@@ -160,8 +189,6 @@ Action이 정상 실행되었다면, 본인 백준 아이디 폴더 내부에 �
 
 ### 동기화 완료 
 <img width="900" height="270" alt="image" src="https://github.com/user-attachments/assets/42e0cef1-cfd9-4a50-a40d-94256e4cc787" />
-
-
 
 
 

@@ -1,0 +1,28 @@
+name: Study CLI Test
+
+on:
+  pull_request:
+    paths:
+      - "scripts/study"
+      - "scripts/study.test.sh"
+      - ".github/workflows/study-cli-test.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/study"
+      - "scripts/study.test.sh"
+      - ".github/workflows/study-cli-test.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify study CLI
+        run: bash scripts/study.test.sh
