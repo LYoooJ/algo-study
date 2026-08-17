@@ -25,7 +25,7 @@
 
 ```bash
 gh auth login
-gh alias set study '!f() { study_script=$(mktemp); gh api repos/algo-gongbu/algo-study/contents/scripts/study -H "Accept: application/vnd.github.raw+json" > "$study_script"; bash "$study_script" "$@"; study_status=$?; rm -f "$study_script"; return $study_status; }; f'
+gh alias set study '!f() { study_script=$(mktemp); gh api repos/algo-gongbu/algo-study/contents/scripts/study -H "Accept: application/vnd.github.raw+json" > "$study_script"; bash "$study_script" "$@"; study_status=$?; rm -f "$study_script"; return $study_status; }; f "$@"'
 ```
 
 문제를 풀기 직전에 fork를 원본과 동기화합니다.
@@ -189,7 +189,6 @@ pro/level1/42840
 
 ### 동기화 완료 
 <img width="900" height="270" alt="image" src="https://github.com/user-attachments/assets/42e0cef1-cfd9-4a50-a40d-94256e4cc787" />
-
 
 
 
