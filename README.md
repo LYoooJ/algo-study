@@ -7,7 +7,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| LYoooJ | 1 | ❌ |
+| LYoooJ | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
