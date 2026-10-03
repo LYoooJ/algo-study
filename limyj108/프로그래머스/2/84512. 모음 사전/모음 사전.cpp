@@ -8,15 +8,14 @@ int ans = 0, cnt = 0;
 char vowels[5] = {'A', 'E', 'I', 'O', 'U'};
 
 void dfs (string& word, string s) {
+    cnt++;
     if (s.compare(word) == 0) {
-        ans = cnt;
-        return;   
+        ans = cnt - 1;
+        return;
     }
-    if (s.size() == MAX_LEN) return;
-    
-    for (char c : vowels) {
-        cnt++;
-        dfs(word, s + c);
+    if (s.size() == 5) return;
+    for (char v : vowels) {
+        dfs(word, s + v);
     }
 }
 
